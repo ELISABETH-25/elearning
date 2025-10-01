@@ -1,0 +1,126 @@
+App\Models\Post::create([
+    'title' => 'article 3',
+    'category_id' => 3,
+    'slug' => 'article-3',
+    'excerpt' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quia.',
+    'body' => '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio sint magnam veritatis. Magni amet officiis voluptas itaque facilis, sit sequi alias quasi debitis distinctio quidem est at! Aliquid, magnam voluptates sequi sed at blanditiis soluta quaerat minima ducimus, rem, dolor distinctio eligendi.</p><p>Veniam, quo! Ipsam, voluptatum? Explicabo commodi odit natus architecto error culpa officia omnis deserunt excepturi minima, in fugit consectetur hic laudantium unde minus? Vero perspiciatis cumque exercitationem sunt quibusdam unde doloribus, inventore dolorum possimus voluptatem.</p><p> odio mollitia enim perferendis quis aliquid eaque labore doloremque! Earum nostrum dolore veritatis quod corrupti illo, nulla cumque odio aut libero totam tenetur rem tempora placeat optio eveniet quibusdam.</p><p> Voluptate corporis ipsum nobis sapiente similique iure molestiae ea quaerat esse neque odit voluptatem eveniet excepturi, omnis libero veniam, architecto voluptatum in dolorem consequuntur praesentium repellat asperiores sit nemo?</p><p> Perspiciatis velit quam blanditiis placeat tempora harum facilis, veritatis vitae id nam illum voluptates error qui nulla corrupti. Dolorem placeat amet possimus voluptates, et aliquid doloribus consequuntur rem soluta accusantium harum magnam omnis voluptas! Iure, ut. Necessitatibus sunt, incidunt nostrum odio optio harum doloribus laudantium est quis tenetur, reprehenderit recusandae iste vel at eos consectetur beatae. Nihil ratione quibusdam facere odit ducimus reprehenderit nisi, ea error beatae animi fugiat necessitatibus magni eos quo repudiandae laborum, fugit in cupiditate, nemo culpa! Ad omnis suscipit blanditiis explicabo molestias totam expedita vero quas optio, odit laborum veritatis reiciendis in deleniti voluptatibus asperiores neque autem voluptas error dolor. Ad animi consequuntur totam minima illo ipsam vel est libero sunt?</p>'
+])
+
+
+App\Models\Bab::create([
+    'bab' => 'Bab 1',
+    'judul' => 'Pengenalan Bahasa dan Sastra',
+])
+
+App\Models\Bab::create([
+    'bab' => 'Bab 2',
+    'judul' => 'Teks Narasi dan Deskripsi',
+])
+
+App\Models\Materi::create([
+    'bab_id' => 2,
+    'judul' => 'Teks Narasi',
+    'slug' => 'teks-narasi',
+    'body' => 'aabbcc',
+])
+
+App\Models\Materi::create([
+    'bab_id' => 2,
+    'judul' => 'Teks Deskripsi',
+    'slug' => 'teks-deskripsi',
+    'body' => 'aabbcc',
+])
+
+App\Models\Materi::create([
+    'bab_id' => 1,
+    'judul' => 'Pengertian Bahasa',
+    'slug' => 'pengertian-bahasa',
+    'body' => 'aabbcc',
+])
+
+App\Models\Quiz::create([
+    'materi_id' => 2,
+    'judul' => 'Evaluasi teks Deskripsi',
+    'body' => 'aaabb',
+    'questions_json' => json_encode([
+      ['q' => 'Apa itu narasi?', 'choices' => ['Cerita', 'Puisi', 'Drama'], 'answer' => 'Cerita']
+  ])
+])
+
+$m1 = App\Models\Materi::create([
+  'bab_id' => $bab1->id,
+  'judul'  => 'Pengertian Narasi',
+  'body'   => 'Isi materi narasi 1...'
+]);
+
+App\Models\Mapel::create([
+    'name' => 'Sejarah Indonesia 1',
+    'slug' => 'sejarah-indonesia-1',
+])
+
+App\Models\Bab::create([
+    'bab' => 'Bab 2',
+    'judul' => 'Teks Narasi dan Deskripsi',
+    'mapel_id' => 1,
+])
+
+App\Models\Bab::create([
+    'bab' => 'Bab 2',
+    'judul' => 'Proklamasi 1945',
+    'mapel_id' => 2,
+])
+
+App\Models\Category::create([
+    'name' => 'Sejarah Indonesia',
+    'slug' => 'sejarah-indonesia',
+])
+
+App\Models\Category::create([
+    'name' => 'Bahasa Indonesia',
+    'slug' => 'bahasa-indonesia',
+])
+
+App\Models\Subject::create([
+    'judul' => 'Bahasa Indonesia 1',
+    'slug' => 'bahasa-indonesia-1',
+    'category_id' => 2,
+])
+
+
+
+
+App\Models\Subject::create([
+    'name' => 'Bahasa Indonesia'
+])
+
+App\Models\Subject::create([
+    'name' => 'Sejarah Indonesia'
+])
+
+App\Models\Category::create([
+    'name' => 'Sejarah Indonesia 3',
+    'subject_id' => 2,
+])
+
+App\Models\Chapter::create([
+    'judul' => 'Teks Deskripsi dan Narasi',
+    'category_id' => 1,
+])
+
+App\Models\Topic::create([
+    'judul' => 'Teks Deskripsi',
+    'chapter_id' => 1,
+    'body' => 'absc',
+])
+
+App\Models\Topic::create([
+    'judul' => 'Teks Narasi',
+    'chapter_id' => 1,
+    'body' => 'absc',
+])
+
+App\Models\Quiz::create([
+    'judul' => 'Evaluasi',
+    'topic_id' => 1,
+    'body' => 'aac',
+])

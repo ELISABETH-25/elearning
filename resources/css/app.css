@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+@source "../views";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+
+/* Custom typography (prose clone) */
+.prose h1 {
+  @apply text-3xl font-bold mt-6 mb-4 leading-tight;
+}
+.prose h2 {
+  @apply text-2xl font-semibold mt-5 mb-3 leading-snug;
+}
+.prose h3 {
+  @apply text-xl font-semibold mt-4 mb-2;
+}
+.prose p {
+  @apply text-base leading-relaxed mb-4 text-gray-700;
+}
+.prose ul {
+  @apply list-disc list-inside mb-4 pl-4;
+}
+.prose ol {
+  @apply list-decimal list-inside mb-4 pl-4;
+}
+.prose li {
+  @apply mb-1;
+}
+.prose a {
+  @apply text-blue-600 underline hover:text-blue-800;
+}
+.prose blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 mb-4;
+}
+.prose code {
+  @apply bg-gray-100 text-pink-600 px-1 rounded;
+}
